@@ -88,25 +88,23 @@ void vvp4() {
 }
 
 void vvp5() {
+	double x1, x2, x3, y1, y2, y3, a, b, c, p, p1, s;
 
-	float x1, x2, y1, y2, z1, z2, a, b, c, s, p, p1;
 
-	scanf_s("%f", &x1);
-	scanf_s("%f", &x2);
-	scanf_s("%f", &y1);
-	scanf_s("%f", &y2); 
-	scanf_s("%f", &z1);
-	scanf_s("%f", &z2);
+	scanf_s("%lf", &x1);
+	scanf_s("%lf", &y1);
+	scanf_s("%lf", &x2);
+	scanf_s("%lf", &y2);
+	scanf_s("%lf", &x3);
+	scanf_s("%lf", &y3);
 
-    a = sqrt(pow((y1 - x1), 2) + pow((y2 - y2), 2));
-	b = sqrt(pow((z2 - y1), 2) + pow((z2 - y2), 2));
-	c = sqrt(pow((z1 - x1), 2) + pow((y2 - y2), 2));
+	a = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+	b = sqrt(pow(x3 - x2, 2) + pow(y3 - y2, 2));
+	c = sqrt(pow(x1 - x3, 2) + pow(y1 - y3, 2));
 
-    p = a + b + c;
-    p1  = p / 2;
+	p1 = a + b + c;
+	p = p1 / 2;
+	s = sqrt(p * (p - a) * (p - b) * (p - c));
 
-    s = sqrt(p1 * (p1 - a) * (p1 - b) * (p1 - c));
-
-	printf("%f, %f", s, p);
-
+	printf("%f, %f", s, p1);
 }
